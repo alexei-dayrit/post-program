@@ -7,3 +7,4 @@ A repo to practice new technologies after completing a coding bootcamp.
 - **React Hooks**
   - **useState()** - basic counter
   - **useEffect()** - fetch JSONplaceholder
+  - **custom hook** - form inputs
