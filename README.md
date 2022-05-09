@@ -5,4 +5,5 @@ A repo to practice new technologies after completing a coding bootcamp.
 # Practiced:
 
 - **React Hooks**
-  - **useState()** with basic counter
+  - **useState()** - basic counter
+  - **useEffect()** - fetch JSONplaceholder
