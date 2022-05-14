@@ -9,3 +9,6 @@ A repo to practice new technologies after completing a coding bootcamp.
   - **useEffect()** - fetch JSONplaceholder
   - **custom hook** - form inputs
   - **useMemo()** - counter w/ theme changer
+
+- **Small Challenges**
+  - **React Hot Button** - useState() and no CSS file
