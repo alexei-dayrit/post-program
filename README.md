@@ -1,6 +1,6 @@
 # Post Program
 
-A repo to practice new technologies after completing a coding bootcamp.
+My practice repo for learning new technologies.
 
 # Practiced:
 
