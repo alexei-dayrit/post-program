@@ -12,3 +12,5 @@ My practice repo for learning new technologies.
 
 - **Small Challenges**
   - **React Hot Button** - useState() and no CSS file
+
+- **Async/Await**
