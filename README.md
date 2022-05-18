@@ -16,3 +16,4 @@ My practice repo for learning new technologies.
 - **Async/Await**
   - **with Fetch API**
   - **with Fetch API and React**
+  - **with Fetch API, React, and custom server**
