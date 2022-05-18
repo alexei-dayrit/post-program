@@ -14,3 +14,5 @@ My practice repo for learning new technologies.
   - **React Hot Button** - useState() and no CSS file
 
 - **Async/Await**
+  - **with Fetch API**
+  - **with Fetch API and React**
