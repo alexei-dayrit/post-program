@@ -12,6 +12,7 @@ My practice repo for learning new technologies.
 
 - **Small Challenges**
   - **React Hot Button** - useState() and no CSS file
+  - **React Stopwatch** - useState()
 
 - **Async/Await**
   - **with Fetch API**
