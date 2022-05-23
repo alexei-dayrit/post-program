@@ -1,4 +1,11 @@
 import React, { useState } from 'react';
+import NavList from './nav';
+
+const nav = [
+  { id: 1, text: 'McDonald\'s' },
+  { id: 2, text: 'Burger King' },
+  { id: 3, text: 'In-N-Out' }
+];
 
 export default function App() {
   const [isToggled, setIsToggled] = useState(false);
@@ -26,26 +33,3 @@ export default function App() {
     );
   }
 }
-
-function NavText(props) {
-  return <li>{props.text}</li>;
-}
-
-function NavList(props) {
-  const nav = props.nav;
-  return (
-    <ul>
-      {nav.map(navItem =>
-        <NavText key={navItem.id}
-          text={navItem.text}
-        />
-      )}
-    </ul>
-  );
-}
-
-const nav = [
-  { id: 1, text: 'McDonald\'s' },
-  { id: 2, text: 'Burger King' },
-  { id: 3, text: 'In-N-Out' }
-];
