@@ -1,0 +1,29 @@
+.flag-container {
+  background-color: red;
+  height: 250px;
+  margin: 1rem;
+  min-width: 300px;
+  position: relative;
+}
+
+.vertical-stripe {
+  background-color: white;
+  height: 250px;
+  left: 30%;
+  position: absolute;
+  width: 3rem;
+}
+
+.horizontal-stripe {
+  background-color: white;
+  height: 3rem;
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+
+@media screen and (min-width: 500px) {
+  .flag-container {
+    width: 500px;
+  }
+}
