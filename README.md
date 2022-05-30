@@ -9,11 +9,13 @@ My practice repo for learning new technologies.
   - **useEffect()** - fetch JSONplaceholder
   - **custom hook** - form inputs
   - **useMemo()** - counter w/ theme changer
+  - **useRef()** - render counter and prev input value
 
 - **Small Challenges**
-  - **React Hot Button** - useState() and no CSS file
+  - **React Hot Button** - useState() and styled w/o CSS file
   - **React Stopwatch** - useState()
-  - **CSS Denmark flag**
+  - **React App Drawer** - useState()
+  - **CSS Denmark flag** - mobile responsive
 
 - **Async/Await**
   - **with Fetch API**
