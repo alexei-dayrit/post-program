@@ -1,0 +1,54 @@
+#root {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.image-wrapper {
+  border: 3px solid black;
+  box-shadow: 0 0 5px 2px black;
+  margin: 2rem;
+  padding: 1rem;
+}
+
+.row {
+  display: flex;
+}
+
+.col-full {
+  width: 100%;
+}
+
+.col-one-fifth {
+  width: 20%;
+}
+
+.col-three-fifths {
+  width: 60%;
+}
+
+i {
+  padding: 0.5rem;
+}
+
+.fa-chevron-left,
+.fa-chevron-right {
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+.dot {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
