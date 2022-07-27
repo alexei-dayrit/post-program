@@ -17,3 +17,16 @@ const increment2 = (counterVal: number) => {
 }
 
 const counter2: number = increment2(10)
+
+
+// JavaScript
+let programmingLanguages1 = ['java', 'typescript', 'python'];
+programmingLanguages1.push('golang');
+
+console.log(programmingLanguages1)
+
+// TypeScript
+let programmingLanguages2: string[] = ['java', 'typescript', 'python'];
+programmingLanguages2.push('golang');
+
+console.log(programmingLanguages2)
