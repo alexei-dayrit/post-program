@@ -68,3 +68,23 @@ const typeScript: IProgrammingLanguage = {
   name: 'typescript',
   isCool: true
 }
+
+// JavaScript
+const serveFood = (foodType, servings) => {
+  console.log(`You want ${servings} servings of ${foodType}.`)
+}
+
+// TypeScript
+enum Food {
+  adobo = 'adobo',
+  steak = 'steak',
+  curry = 'curry',
+  pasta = 'pasta'
+}
+
+// void means function doesn't return anything
+const serveFood2 = (foodType: Food, servings: number): void => {
+  console.log(`You want ${servings} servings of ${foodType}.`);
+}
+
+serveFood(Food.steak, 2);
