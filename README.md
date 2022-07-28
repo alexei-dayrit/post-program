@@ -21,3 +21,6 @@ My practice repo for learning new technologies.
   - **with Fetch API**
   - **with Fetch API and React**
   - **with Fetch API, React, and custom server**
+
+- **TypeScript**
+  - **Basics - counter, arrays, objects, interfaces, and enums**
