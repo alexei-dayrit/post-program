@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
-
+import { Route, Routes } from 'react-router-dom'
 
 const App = () => {
   return (
-    <h1>
-      Hello React Router
-    </h1>
+    <>
+      <Routes>
+        <Route />
+        <Route />
+      </Routes>
+    </>
   );
 }
 
