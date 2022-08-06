@@ -7,6 +7,7 @@ import ProductList from './pages/ProductList';
 import Contact from './pages/Contact';
 import Product from './pages/Product';
 import NewProduct from './pages/NewProduct';
+import NotFound from './pages/NotFound';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path='/products/:id' element={<Product />}/>
           <Route path='/products/new' element={<NewProduct />}/>
           <Route path='/contact' element={<Contact />}/>
+          <Route path='*' element={<NotFound />}/>
         </Routes>
       </div>
     </div>
