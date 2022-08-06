@@ -8,6 +8,8 @@ const ProductList = () => {
       <Link to='/products/1' className='product-links'>Product 1</Link>
       <br/>
       <Link to='/products/2' className='product-links'>Product 2</Link>
+      <br/>
+      <Link to='/products/new' className='product-links'>New Product</Link>
     </div>
   )
 }
