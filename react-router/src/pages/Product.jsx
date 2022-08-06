@@ -2,9 +2,9 @@ import React from 'react'
 
 const Product = () => {
   return (
-    <div>
+    <h1 style={{color: 'green'}}>
       Product
-    </div>
+    </h1>
   )
 }
 
