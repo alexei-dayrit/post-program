@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { useParams } from 'react-router-dom'
 
 const Product = () => {
+  const { id } = useParams()
+
   return (
     <h1 style={{color: 'green'}}>
-      Product
+      Product {id}
     </h1>
   )
 }
