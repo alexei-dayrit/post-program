@@ -23,7 +23,8 @@ My practice repo for learning new technologies.
   - **with Fetch API, React, and custom server**
 
 - **TypeScript**
-  - **Basics - counter, arrays, objects, interfaces, and enums**
+  - **Basics** - counter, arrays, objects, interfaces, and enums
 
 - **React Router**
-  - **Basics - BrowserRouter, Routes, Route, and Link**
+  - **Basics** - BrowserRouter, Routes, Route, and Link
+  - **Dynamic Routes** - route params, handling invalid params, route specificity
