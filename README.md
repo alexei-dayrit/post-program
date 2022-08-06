@@ -24,3 +24,6 @@ My practice repo for learning new technologies.
 
 - **TypeScript**
   - **Basics - counter, arrays, objects, interfaces, and enums**
+
+- **React Router**
+  - **Basics - BrowserRouter, Routes, Route, and Link**
