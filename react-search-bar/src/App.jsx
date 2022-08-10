@@ -1,9 +1,11 @@
-import './App.css';
+import './styles.css';
+import SearchBar from './components/SearchBar';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello Search Bar</h1>
+    <div>
+      <h1 className="header">Search for products!</h1>
+      <SearchBar />
     </div>
   );
 }
