@@ -28,7 +28,7 @@ const Product = ({searchQuery}) => {
         .map(item => (
           <li key={item.id} className='product-item'>
             <img src={item.images[0]} alt='Product Item' />
-            <h1>{item.title}</h1>
+            <h1 className='product-title'>{item.title}</h1>
           </li>
         ))}
       </ul>
