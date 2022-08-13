@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './styles.css';
 import SearchBar from './components/SearchBar';
+import Product from './components/Product';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -22,6 +23,7 @@ function App() {
     <div>
       <h1 className="header">Search for products!</h1>
       <SearchBar />
+      <Product products={products}/>
     </div>
   );
 }
