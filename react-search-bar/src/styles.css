@@ -43,4 +43,7 @@ img {
   object-fit: contain;
   width: 200px;
   height: 200px;
+  margin-bottom: 12px;
 }
+
+/* add mobile responsivenes */

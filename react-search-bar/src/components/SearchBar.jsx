@@ -1,8 +1,19 @@
 import '../styles.css'
 
-const SearchBar = () => {
+const SearchBar = ({setSearchQuery}) => {
+  const handleSearchQuery = event => {
+    setSearchQuery(event.target.value);
+  }
+
   return (
-    <input className="search-bar" />
+    <div>
+      <input
+        className="search-bar"
+        placeholder='Enter a Product Name...'
+        onChange={handleSearchQuery}
+      />
+
+    </div>
   )
 }
 

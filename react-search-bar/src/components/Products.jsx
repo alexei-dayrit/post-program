@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react'
 import '../styles.css'
 
-const Product = () => {
+const Product = ({searchQuery}) => {
 
   const [products, setProducts] = useState([]);
 
@@ -21,10 +21,14 @@ const Product = () => {
   return (
     <div className='container'>
       <ul className='product-list'>
-        {products.map(product => (
-          <li key={product.id} className='product-item'>
-            <img src={product.images[0]} alt='Product Item'/>
-            <h1>{product.title}</h1>
+        {products.filter(item => {
+          const filteredQuery = item.title.toLowerCase().includes(searchQuery.toLowerCase());
+          return filteredQuery;
+        })
+        .map(item => (
+          <li key={item.id} className='product-item'>
+            <img src={item.images[0]} alt='Product Item' />
+            <h1>{item.title}</h1>
           </li>
         ))}
       </ul>
