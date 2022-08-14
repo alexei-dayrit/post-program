@@ -1,8 +1,16 @@
 import '../styles.css'
 
-const SearchBar = () => {
+const SearchBar = ({testRef, handleFilter}) => {
+
   return (
-    <input className="search-bar" />
+    <div>
+      <input
+        className="search-bar"
+        placeholder='Enter a Product Name...'
+        onChange={handleFilter}
+        ref={testRef}
+      />
+    </div>
   )
 }
 
