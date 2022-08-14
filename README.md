@@ -16,6 +16,7 @@ My practice repo for learning new technologies.
   - **React Stopwatch** - useState()
   - **React App Drawer** - useState()
   - **CSS Denmark flag** - mobile responsive
+  - **React Search Bar** - filter() and async fetch
 
 - **Async/Await**
   - **with Fetch API**
