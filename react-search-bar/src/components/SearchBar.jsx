@@ -1,6 +1,6 @@
 import '../styles.css'
 
-const SearchBar = ({testRef, handleFilter}) => {
+const SearchBar = ({handleFilter}) => {
 
   return (
     <div>
@@ -8,7 +8,6 @@ const SearchBar = ({testRef, handleFilter}) => {
         className="search-bar"
         placeholder='Enter a Product Name...'
         onChange={handleFilter}
-        ref={testRef}
       />
     </div>
   )
