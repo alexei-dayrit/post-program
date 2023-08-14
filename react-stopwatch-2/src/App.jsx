@@ -2,24 +2,33 @@ import { useState } from "react";
 import './App.css'
 
 export default function App() {
-  const [min, setMin] = useState(0)
-  const [sec, setSec] = useState(0)
+  const [timer, setTimer] = useState(0)
   const [intervalId, setIntervalId] = useState(null)
 
   const startTimer = () => {
-    // Complete this function
+    console.log('start timer')
+    setIntervalId(setInterval(() => {
+      setTimer((prevTimer) => prevTimer + 1)
+    }, 1000));
   };
+
   const stopTimer = () => {
-    // Complete this function
+    console.log('stop timer')
+    clearInterval(intervalId)
+
   };
+
   const resetTimer = () => {
-    // Complete this function
+    console.log('reset timer')
+    clearInterval(intervalId)
+    setTimer(0)
   };
+
   return (
     <div className="container">
       <h1>Timer</h1>
-      <span> {min} mins </span>
-      <span> {sec} secs</span>
+      <span> {Math.trunc(timer / 60)} mins </span>
+      <span> {timer % 60} secs</span>
       <div>
         <button onClick={startTimer}>Start</button>
         <button onClick={stopTimer}>Stop</button>
