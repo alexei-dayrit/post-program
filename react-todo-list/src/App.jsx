@@ -9,14 +9,33 @@ import './App.css'
 */
 
 export default function App() {
-  const addCities = () => {
+  const [inputText, setInputText] = useState('')
+  const [allCities, setAllCities] = useState([])
+
+
+  const addCities = (e) => {
     //Complete function
+    e.preventDefault();
+    setAllCities((prev) => [...prev, inputText])
   };
 
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <form onSubmit={addCities}>
+        <input
+          type="text"
+          id="inputText"
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+        />
+        <button>Add</button>
+      </form>
+      <div>
+        <h1>Cities added:</h1>
+        {allCities.map((city) => (
+          <li key={city}>{city}</li>
+        ))}
+      </div>
     </div>
   );
 }
