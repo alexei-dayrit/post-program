@@ -8,6 +8,7 @@ export default function App() {
 
   const addCities = (e) => {
     e.preventDefault();
+    if (!inputText || allCities.includes(inputText)) return;
     setAllCities((prev) => [...prev, inputText])
     setInputText('');
   };
