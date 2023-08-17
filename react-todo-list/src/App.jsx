@@ -20,7 +20,7 @@ export default function App() {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <form onSubmit={addCities}>
         <input
           type="text"
@@ -32,9 +32,14 @@ export default function App() {
       </form>
       <div>
         <h1>Cities added:</h1>
-        {allCities.map((city) => (
-          <li key={city}>{city}</li>
-        ))}
+        <ul>
+          {allCities.map((city) => (
+            <div key={city} className='list-item'>
+              <li >{city}</li>
+              <button>X</button>
+            </div>
+          ))}
+        </ul>
       </div>
     </div>
   );
