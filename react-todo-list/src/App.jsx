@@ -14,13 +14,7 @@ export default function App() {
   };
 
   const handleRemoveCity = (removeCity) => {
-    console.log('removeCity:', removeCity)
-    console.log('before delete...allCities:', allCities)
-    const updatedCities = allCities.filter((city) => {
-      console.log('city:', city)
-      return city !== removeCity
-    });
-    console.log('updatedCities:', updatedCities)
+    const updatedCities = allCities.filter((city) => city !== removeCity);
     setAllCities(updatedCities);
   };
 
@@ -42,8 +36,6 @@ export default function App() {
               <li key={city}>
                 {city} <button onClick={() => handleRemoveCity(city)}>X</button>
               </li>
-
-
           ))}
         </ul>
       </div>
