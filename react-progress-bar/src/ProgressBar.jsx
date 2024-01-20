@@ -1,8 +1,12 @@
-import React from 'react'
-
-const ProgressBar = () => {
+const ProgressBar = ({ width }) => {
   return (
-    <div>ProgressBar</div>
+    <div>
+      <div className="container">
+        <div className="innerContainer" style={{ width: `${width}%` }}>
+          {width}%
+        </div>
+      </div>
+    </div>
   )
 }
 

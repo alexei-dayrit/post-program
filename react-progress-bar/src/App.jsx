@@ -12,7 +12,7 @@ function App() {
     <>
       <div className="App">
         <h1>Progress bar</h1>
-        <ProgressBar />
+        <ProgressBar width={widthValue} />
         <form>
           <label htmlFor="html">Input Percentage:</label>
           <input type="number" onChange={setValuer} />
