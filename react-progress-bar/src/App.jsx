@@ -1,13 +1,27 @@
 import { useState } from 'react'
 import './App.css'
+import ProgressBar from './ProgressBar';
 
 function App() {
   const [widthValue, setWidthValue] = useState(0);
-
   const setValuer = (e) => {
     setWidthValue(e.target.value);
   };
 
+  return (
+    <>
+      <div className="App">
+        <h1>Progress bar</h1>
+        <ProgressBar width={widthValue} />
+        <form>
+          <label htmlFor="html">Input Percentage:</label>
+          <input type="number" onChange={setValuer} />
+        </form>
+      </div>
+    </>
+  );
+
+/* FIRST SOLUTION
   const progressBarStyle = {
     width: `${widthValue}%`,
     height: "25px",
@@ -37,6 +51,7 @@ function App() {
       </div>
     </>
   )
+*/
 }
 
 export default App
