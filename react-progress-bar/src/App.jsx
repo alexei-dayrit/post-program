@@ -7,11 +7,16 @@ function App() {
   const setValuer = () => "";
 
   const progressBarStyle = {
-
+    width: `${widthValue}%`,
+    height: "25px",
+    backgroundColor: "red", // Background color for the filled progress
+    borderRadius: "10px",
   };
 
   const emptyProgressBarStyle = {
-
+    height: "25px",
+    backgroundColor: "lightgray", // Background color for the empty part
+    borderRadius: "10px",
   };
 
   return (
