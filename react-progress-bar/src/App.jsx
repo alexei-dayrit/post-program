@@ -4,7 +4,9 @@ import './App.css'
 function App() {
   const [widthValue, setWidthValue] = useState(0);
 
-  const setValuer = () => "";
+  const setValuer = (e) => {
+    setWidthValue(e.target.value);
+  };
 
   const progressBarStyle = {
     width: `${widthValue}%`,
