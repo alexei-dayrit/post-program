@@ -1,4 +1,5 @@
 const ProgressBar = ({ width }) => {
+  // using CSS classes and only making 'width' dynamic via 'style' prop (transition on innerContainer)
   return (
     <div>
       <div className="container">
