@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react'
-import './App.css'
+import { useState, useEffect } from 'react';
+import './App.css';
+
+type StopLightState = 'stop' | 'slow' | 'go'
 
 function App() {
-  const [lightState, setLightState] = useState('stop');
+  const [lightState, setLightState] = useState<StopLightState>('stop');
 
   useEffect(() => {
     const stopTimer = setTimeout(() => {
@@ -28,17 +30,19 @@ function App() {
     };
   });
 
+  function getLightClass(light: StopLightState) {
+    return `light ${light} ${lightState === light ? 'on' : ''}`;
+  }
+
   return (
-      <div className="App">
-        <div className="traffic-light">
-          <div
-            className={`light stop ${lightState === 'stop' ? 'on' : ''}`}></div>
-          <div
-            className={`light slow ${lightState === 'slow' ? 'on' : ''}`}></div>
-          <div className={`light go ${lightState === 'go' ? 'on' : ''}`}></div>
-        </div>
+    <div className="App">
+      <div className="traffic-light">
+        <div className={getLightClass('stop')}></div>
+        <div className={getLightClass('slow')}></div>
+        <div className={getLightClass('go')}></div>
       </div>
+    </div>
   );
 }
 
-export default App
+export default App;
