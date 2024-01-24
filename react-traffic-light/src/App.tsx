@@ -3,6 +3,9 @@ import './App.css';
 
 type StopLightState = 'stop' | 'slow' | 'go'
 
+const STOP_AND_GO_DELAY = 5000;
+const SLOW_DELAY = 2000;
+
 function App() {
   const [lightState, setLightState] = useState<StopLightState>('stop');
 
@@ -11,19 +14,19 @@ function App() {
       if (lightState === 'stop') {
         setLightState('slow');
       }
-    }, 5000);
+    }, STOP_AND_GO_DELAY);
 
     const slowTimer = setTimeout(() => {
       if (lightState === 'slow') {
         setLightState('go');
       }
-    }, 3000);
+    }, SLOW_DELAY);
 
     const goTimer = setTimeout(() => {
       if (lightState === 'go') {
         setLightState('stop');
       }
-    }, 5000);
+    }, STOP_AND_GO_DELAY);
 
     return () => {
       clearTimeout(stopTimer), clearTimeout(slowTimer), clearTimeout(goTimer);
