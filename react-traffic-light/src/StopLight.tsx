@@ -7,10 +7,13 @@ interface StopLightParams {
 
 type StopLightState = 'stop' | 'slow' | 'go';
 
-// const DEFAULT_STOP_AND_GO_DELAY = 5000;
-// const DEFAULT_SLOW_DELAY = 2000;
+const DEFAULT_STOP_AND_GO_DELAY = 5000;
+const DEFAULT_SLOW_DELAY = 2000;
 
-const StopLight = ({ stopAndGoDelay, slowDelay }: StopLightParams) => {
+const StopLight = ({
+  stopAndGoDelay = DEFAULT_STOP_AND_GO_DELAY,
+  slowDelay = DEFAULT_SLOW_DELAY
+}: StopLightParams) => {
   const [lightState, setLightState] = useState<StopLightState>('stop');
 
   useEffect(() => {
