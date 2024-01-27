@@ -1,18 +1,21 @@
 import { useEffect, useState } from 'react';
 
 interface StopLightParams {
-  stopAndGoDelay?: number;
+  stopDelay?: number;
   slowDelay?: number;
+  goDelay?: number;
 }
 
 type StopLightState = 'stop' | 'slow' | 'go';
 
-const DEFAULT_STOP_AND_GO_DELAY = 5000;
+const DEFAULT_STOP_DELAY = 4500;
 const DEFAULT_SLOW_DELAY = 2000;
+const DEFAULT_GO_DELAY = 6000;
 
 const StopLight = ({
-  stopAndGoDelay = DEFAULT_STOP_AND_GO_DELAY,
-  slowDelay = DEFAULT_SLOW_DELAY
+  stopDelay = DEFAULT_STOP_DELAY,
+  slowDelay = DEFAULT_SLOW_DELAY,
+  goDelay = DEFAULT_GO_DELAY
 }: StopLightParams) => {
   const [lightState, setLightState] = useState<StopLightState>('stop');
 
@@ -21,7 +24,7 @@ const StopLight = ({
       if (lightState === 'stop') {
         setLightState('slow');
       }
-    }, stopAndGoDelay);
+    }, stopDelay);
 
     const slowTimer = setTimeout(() => {
       if (lightState === 'slow') {
@@ -33,7 +36,7 @@ const StopLight = ({
       if (lightState === 'go') {
         setLightState('stop');
       }
-    }, stopAndGoDelay);
+    }, goDelay);
 
     return () => {
       clearTimeout(stopTimer), clearTimeout(slowTimer), clearTimeout(goTimer);
