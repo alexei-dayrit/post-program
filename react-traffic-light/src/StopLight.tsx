@@ -48,12 +48,10 @@ const StopLight = ({
   }
 
   return (
-    <div className="App">
-      <div className="traffic-light">
-        <div className={getLightClass('stop')}></div>
-        <div className={getLightClass('slow')}></div>
-        <div className={getLightClass('go')}></div>
-      </div>
+    <div className="traffic-light">
+      <div className={getLightClass('stop')}></div>
+      <div className={getLightClass('slow')}></div>
+      <div className={getLightClass('go')}></div>
     </div>
   );
 };
