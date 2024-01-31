@@ -5,7 +5,7 @@ import './App.css'
 
 // destructuring data to make it simpler to work with
 function CountryCapitalGame({ data }) {
-  const [buttonColor, setButtonColor] = useState('')
+  const [buttonColorMap, setButtonColorMap] = useState({})
 
   const countries = Object.keys(data)
   const capitals = Object.values(data);
@@ -13,9 +13,12 @@ function CountryCapitalGame({ data }) {
   // randomize button order
   const randomizedOptions = options.sort(() => Math.random() - 0.5)
 
-  function handleButtonClick() {
+  function handleButtonClick(option) {
 
-    setButtonColor('blue')
+    setButtonColorMap({
+      ...buttonColorMap,
+      [option]: 'blue'
+    })
   }
 
   // using map to remove repetitive code
@@ -24,9 +27,9 @@ function CountryCapitalGame({ data }) {
     <div>
       {randomizedOptions.map((option) => (
         <button
-          onClick={() => handleButtonClick()}
+          onClick={() => handleButtonClick(option)}
           key={option}
-          style={{ backgroundColor: buttonColor }}
+          style={{backgroundColor: buttonColorMap[option] === 'blue' ? 'blue' : ''}}
         >
           {option}
         </button>
