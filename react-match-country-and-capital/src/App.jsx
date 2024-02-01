@@ -5,38 +5,40 @@ import './App.css'
 
 // destructuring data to make it simpler to work with
 function CountryCapitalGame({ data }) {
-  const [buttonColorMap, setButtonColorMap] = useState({})
-
   const countries = Object.keys(data)
   const capitals = Object.values(data);
-  const options = [...countries, ...capitals]
   // randomize button order
-  const randomizedOptions = options.sort(() => Math.random() - 0.5)
+  const [options, setOptions] = useState(
+    [...countries, ...capitals].sort(() => Math.random() - 0.5).map((value) => ({ value, state: 'DEFAULT' }))
+  )
+  console.log('options:', options)
 
-  function handleButtonClick(option) {
+  function handleButtonClick(clickedOption) {
 
-    setButtonColorMap({
-      ...buttonColorMap,
-      [option]: 'blue'
-    })
+    setOptions(
+      options.map((option) => {
+        return option === clickedOption ? { ...option, state: "SELECTED" } : option;
+      })
+    )
   }
 
   // using map to remove repetitive code
   return (<>
-    {/* <div>{JSON.stringify(pairs)}</div> */}
     <div>
-      {randomizedOptions.map((option) => (
-        <button
-          onClick={() => handleButtonClick(option)}
-          key={option}
-          style={{backgroundColor: buttonColorMap[option] === 'blue' ? 'blue' : ''}}
-        >
-          {option}
-        </button>
-
-
-      ))}
+      {options.map((option) => {
+        console.log('option in render map:', option);
+        return (
+          <button
+            onClick={() => handleButtonClick(option)}
+            key={option.value}
+            className={option.state === 'SELECTED' ? 'selected' : '' }
+          >
+            {option.value}
+          </button>
+        );
+      })}
     </div>
+
 
   </>);
 }
