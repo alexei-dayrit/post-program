@@ -16,12 +16,14 @@ function CountryCapitalGame({ data }) {
   const [selected, setSelected] = useState('')
   console.log('selected:', selected)
 
+  const isGameOver = options.length === 0;
+
   function handleButtonClick(clickedOption) {
     if (!selected) {
       setSelected(clickedOption)
       setOptions(
         options.map((option) => {
-          return option === clickedOption ? { ...option, state: "SELECTED" } : {...option, state: 'DEFAULT'};
+          return option === clickedOption ? { ...option, state: "SELECTED" } : { ...option, state: 'DEFAULT' };
         })
       )
     } else {
@@ -39,24 +41,24 @@ function CountryCapitalGame({ data }) {
       }
       setSelected(undefined)
     }
-
   }
 
   // using map to remove repetitive code
   return (<>
     <div>
-      {options.map((option) => {
-        console.log('option in render map:', option);
-        return (
-          <button
-            onClick={() => handleButtonClick(option)}
-            key={option.value}
-            className={option.state === 'SELECTED' ? 'selected' : option.state === 'WRONG' ? 'wrong' : ''}
-          >
-            {option.value}
-          </button>
-        );
-      })}
+      {isGameOver ? (<div>Congratulations</div>)
+        : (options.map((option) => {
+          console.log('option in render map:', option);
+          return (
+            <button
+              onClick={() => handleButtonClick(option)}
+              key={option.value}
+              className={option.state === 'SELECTED' ? 'selected' : option.state === 'WRONG' ? 'wrong' : ''}
+            >
+              {option.value}
+            </button>
+          );
+        }))}
     </div>
 
 
