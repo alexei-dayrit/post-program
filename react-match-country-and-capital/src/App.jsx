@@ -5,6 +5,7 @@ import './App.css'
 
 // destructuring data to make it simpler to work with
 function CountryCapitalGame({ data }) {
+  console.log('data:', data)
   const countries = Object.keys(data)
   const capitals = Object.values(data);
   // randomize button order
@@ -12,14 +13,33 @@ function CountryCapitalGame({ data }) {
     [...countries, ...capitals].sort(() => Math.random() - 0.5).map((value) => ({ value, state: 'DEFAULT' }))
   )
   console.log('options:', options)
+  const [selected, setSelected] = useState('')
+  console.log('selected:', selected)
 
   function handleButtonClick(clickedOption) {
+    if (!selected) {
+      setSelected(clickedOption)
+      setOptions(
+        options.map((option) => {
+          return option === clickedOption ? { ...option, state: "SELECTED" } : option;
+        })
+      )
+    } else {
+      // selected correct
+      if (selected.value === data[clickedOption.value] || data[selected.value] === clickedOption.value) {
+        setOptions(options.filter((option) => {
+          return !(option.value === selected.value || option.value === clickedOption.value)
+        }))
+      } else {
+        // selected wrong
+        setOptions(options.map((option) => {
+          return (option.value === selected.value || option.value === clickedOption.value)
+            ? { ...option, state: 'WRONG' } : option
+        }))
+      }
+      setSelected(undefined)
+    }
 
-    setOptions(
-      options.map((option) => {
-        return option === clickedOption ? { ...option, state: "SELECTED" } : option;
-      })
-    )
   }
 
   // using map to remove repetitive code
@@ -31,7 +51,7 @@ function CountryCapitalGame({ data }) {
           <button
             onClick={() => handleButtonClick(option)}
             key={option.value}
-            className={option.state === 'SELECTED' ? 'selected' : '' }
+            className={option.state === 'SELECTED' ? 'selected' : option.state === 'WRONG' ? 'wrong' : ''}
           >
             {option.value}
           </button>
