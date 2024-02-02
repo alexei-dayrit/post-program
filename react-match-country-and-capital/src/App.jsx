@@ -21,7 +21,7 @@ function CountryCapitalGame({ data }) {
       setSelected(clickedOption)
       setOptions(
         options.map((option) => {
-          return option === clickedOption ? { ...option, state: "SELECTED" } : option;
+          return option === clickedOption ? { ...option, state: "SELECTED" } : {...option, state: 'DEFAULT'};
         })
       )
     } else {
